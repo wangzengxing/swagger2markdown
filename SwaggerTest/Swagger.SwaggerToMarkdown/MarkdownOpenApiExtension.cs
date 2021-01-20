@@ -39,7 +39,14 @@ namespace Swagger.SwaggerToMarkdown
 
             if (typeof(IEnumerable).IsAssignableFrom(_responseType))
             {
-                return JArray.FromObject(Activator.CreateInstance(_responseType), serializer).ToString();
+                var jArray = JArray.FromObject(Activator.CreateInstance(_responseType), serializer);
+
+                if (_responseType.GenericTypeArguments.Length > 0)
+                {
+                    jArray.Add(JObject.FromObject(Activator.CreateInstance(_responseType.GenericTypeArguments.FirstOrDefault()), serializer));
+                }
+
+                return jArray.ToString();
             }
 
             return JObject.FromObject(Activator.CreateInstance(_responseType), serializer).ToString();
