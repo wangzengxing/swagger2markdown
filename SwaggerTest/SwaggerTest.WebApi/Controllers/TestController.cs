@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SwaggerTest.WebApi.Model;
-using SwaggerTest.WebApi.Swagger;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;

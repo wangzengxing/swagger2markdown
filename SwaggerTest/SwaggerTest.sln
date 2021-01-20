@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerTest.WebApi", "SwaggerTest.WebApi\SwaggerTest.WebApi.csproj", "{A417E834-F1BA-421B-B982-F017F4A8512E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerTest.WebApi", "SwaggerTest.WebApi\SwaggerTest.WebApi.csproj", "{A417E834-F1BA-421B-B982-F017F4A8512E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swagger.SwaggerToMarkdown", "Swagger.SwaggerToMarkdown\Swagger.SwaggerToMarkdown.csproj", "{D71A441B-0EED-4F25-9118-68C05A71DD4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A417E834-F1BA-421B-B982-F017F4A8512E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A417E834-F1BA-421B-B982-F017F4A8512E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A417E834-F1BA-421B-B982-F017F4A8512E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71A441B-0EED-4F25-9118-68C05A71DD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71A441B-0EED-4F25-9118-68C05A71DD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71A441B-0EED-4F25-9118-68C05A71DD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71A441B-0EED-4F25-9118-68C05A71DD4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

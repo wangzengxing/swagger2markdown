@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SwaggerTest.WebApi.Swagger.Markdown
+namespace Swagger.SwaggerToMarkdown.Markdown
 {
     public class MarkdownDocument
     {

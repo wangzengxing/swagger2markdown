@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SwaggerTest.WebApi.Swagger
+namespace Swagger.SwaggerToMarkdown
 {
     public class SwaggerToMarkdownOptions
     {

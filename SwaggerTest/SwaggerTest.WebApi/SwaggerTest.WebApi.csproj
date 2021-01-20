@@ -15,5 +15,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Swagger.SwaggerToMarkdown\Swagger.SwaggerToMarkdown.csproj" />
+  </ItemGroup>
+
 
 </Project>

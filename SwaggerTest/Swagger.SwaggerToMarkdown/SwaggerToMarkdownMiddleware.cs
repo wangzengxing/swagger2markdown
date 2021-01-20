@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using SwaggerTest.WebApi.Swagger.Extensions;
-using SwaggerTest.WebApi.Swagger.Markdown;
+using Swagger.SwaggerToMarkdown.Extensions;
+using Swagger.SwaggerToMarkdown.Markdown;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SwaggerTest.WebApi.Swagger
+namespace Swagger.SwaggerToMarkdown
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
     public class SwaggerToMarkdownMiddleware

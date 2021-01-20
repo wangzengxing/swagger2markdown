@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SwaggerTest.WebApi.Swagger
+namespace Swagger.SwaggerToMarkdown
 {
     public class MarkdownOpenApiExtension : IOpenApiExtension
     {

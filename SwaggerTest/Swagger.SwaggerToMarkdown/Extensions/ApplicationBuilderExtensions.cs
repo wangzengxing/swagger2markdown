@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SwaggerTest.WebApi.Swagger.Extensions
+namespace Swagger.SwaggerToMarkdown.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
