@@ -90,8 +90,10 @@ namespace Swagger.SwaggerToMarkdown
                             {
                                 if (openApiResponse.Content.TryGetValue("application/json", out var openApiMediaType))
                                 {
-                                    var openApiSchema = GetSchema(swagger, openApiMediaType.Schema.Reference.ReferenceV3);
-                                    if (openApiSchema.Properties.Count > 0)
+                                    var reference = openApiMediaType.Schema.Reference?.ReferenceV3 ?? openApiMediaType.Schema.Items?.Reference?.ReferenceV3;
+                                    var openApiSchema = GetSchema(swagger, reference);
+
+                                    if (openApiSchema != null && openApiSchema.Properties.Count > 0)
                                     {
                                         builder.AddHeader("参数名", "类型", "说明");
 
@@ -116,6 +118,11 @@ namespace Swagger.SwaggerToMarkdown
 
         private static OpenApiSchema GetSchema(OpenApiDocument swagger, string reference)
         {
+            if (reference == null)
+            {
+                return null;
+            }
+
             var schema = reference.Substring(reference.LastIndexOf("/") + 1);
             var openApiSchema = swagger.Components.Schemas[schema];
 

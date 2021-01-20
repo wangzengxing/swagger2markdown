@@ -22,7 +22,7 @@ namespace SwaggerTest.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        //[ProducesResponseType(200, Type = typeof(Person))]
+        [ProducesResponseType(200, Type = typeof(List<Person>))]
         public ApiResult<List<int>> Get()
         {
             return new ApiResult<List<int>>();

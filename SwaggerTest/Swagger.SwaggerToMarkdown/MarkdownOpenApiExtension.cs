@@ -6,6 +6,8 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Collections;
 
 namespace Swagger.SwaggerToMarkdown
 {
@@ -34,6 +36,12 @@ namespace Swagger.SwaggerToMarkdown
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             };
+
+            if (typeof(IEnumerable).IsAssignableFrom(_responseType))
+            {
+                return JArray.FromObject(Activator.CreateInstance(_responseType), serializer).ToString();
+            }
+
             return JObject.FromObject(Activator.CreateInstance(_responseType), serializer).ToString();
         }
     }

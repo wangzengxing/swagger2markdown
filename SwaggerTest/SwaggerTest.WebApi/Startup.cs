@@ -32,7 +32,7 @@ namespace SwaggerTest.WebApi
             services.AddSwaggerToMarkdown(options =>
             {
                 options.DocumentName = "v1";
-                options.RelativePath = "/swaggerToMarkdown";
+                options.RelativePath = "/markdown";
             });
         }
 
