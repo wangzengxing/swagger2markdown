@@ -22,7 +22,7 @@ namespace Swagger.SwaggerToMarkdown.Extensions
             {
                 options.OperationFilter<MarkdownOperationFilter>();
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
 
