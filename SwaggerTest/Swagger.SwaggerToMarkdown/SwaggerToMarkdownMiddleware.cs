@@ -102,9 +102,7 @@ namespace Swagger.SwaggerToMarkdown
                                         if (openApiSchema != null && openApiSchema.Properties.Count > 0)
                                         {
                                             builder.AddHeader("参数名", "类型", "说明");
-
-                                            var prefix = string.Empty;
-                                            AddProperties(builder, openApiSchema.Properties, ref prefix, swagger);
+                                            AddProperties(builder, openApiSchema.Properties, string.Empty, swagger, string.Empty);
                                         }
                                     }
                                 }
@@ -144,7 +142,7 @@ namespace Swagger.SwaggerToMarkdown
             return openApiSchema;
         }
 
-        private static void AddProperties(MarkdownTableBuilder builder, IDictionary<string, OpenApiSchema> properties, ref string prefix, OpenApiDocument swagger)
+        private static void AddProperties(MarkdownTableBuilder builder, IDictionary<string, OpenApiSchema> properties, string prefix, OpenApiDocument swagger, string parentReference)
         {
             foreach (var property in properties)
             {
@@ -156,13 +154,18 @@ namespace Swagger.SwaggerToMarkdown
                     reference = property.Value.Items.Reference?.ReferenceV3;
                 }
 
+                if (parentReference == reference)
+                {
+                    continue;
+                }
+
                 if (reference != null)
                 {
                     var openApiSchema = GetSchema(swagger, reference);
                     if (openApiSchema.Properties.Count > 0)
                     {
                         prefix += property.Key.ToTitleCase() + ".";
-                        AddProperties(builder, openApiSchema.Properties, ref prefix, swagger);
+                        AddProperties(builder, openApiSchema.Properties, prefix, swagger, reference);
                     }
                 }
             }

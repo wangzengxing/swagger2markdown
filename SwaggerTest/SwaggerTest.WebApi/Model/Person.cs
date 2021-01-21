@@ -19,5 +19,10 @@ namespace SwaggerTest.WebApi.Model
         /// 姓名
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// 子级
+        /// </summary>
+        public IEnumerable<Person> Persons { get; set; }
     }
 }
